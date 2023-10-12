@@ -1,0 +1,56 @@
+.cardContainer {
+    width: 94%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0.875rem 0.875rem 0 0.875rem;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.imageContainer {
+    width: 82px;
+    height: 80px;
+    background-color: var(--color-grey-100);
+    border-radius: 5px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.cardValues {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.9375rem;
+
+    h3 {
+       color: var(--color-grey-600); 
+    }
+
+    p {
+        color: var(--color-primary);
+    }
+}
+
+.deleteCardButton {
+    border: none;
+    background-color: transparent;
+    color: #BDBDBD;
+
+    &:hover {
+        color: #DC143C;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,133 @@
+.modal {
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modalContainer {
+    width: 484px;
+
+    background-color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 8px;
+
+    hr {
+        width: 94%;
+        height: 2px;
+
+        background-color: var(--color-grey-100);
+
+        margin: 1.375rem 0;
+    }
+}
+
+.modalHeader {
+    width: 95%;
+    height: 30px;
+
+    background-color: var(--color-primary);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.75rem;
+    border-radius: 8px 8px 0 0;
+
+    h2 {
+        color: #fff;
+    }
+
+    button {
+        border: none;
+
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.5);
+
+        &:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+
+.modalMain {
+    width: 100%;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.footerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.375rem;
+    margin-bottom: 20px;
+
+    button {
+        width: 94%;
+        height: 60px;
+
+        padding: 0 1.25rem;
+        border: none;
+        border-radius: 8px;
+
+        background-color: #BDBDBD;
+        color: #FFFFFF;
+
+        font-size: 1rem;
+        font-weight: 600;
+
+        &:hover {
+            background-color: var(--color-primary);
+            cursor: pointer;
+        }
+    }
+}
+
+.footerContent {
+    width: 94%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.totalValue {
+    color: var(--color-grey-300);
+}
+
+@media (max-width: 534px) {
+
+    .modalContainer {
+        width: 90%;
+    }
+}
+
+@media (max-width: 390px) {
+
+    .modalHeader {
+        padding: 0.625rem;
+    }
+}
