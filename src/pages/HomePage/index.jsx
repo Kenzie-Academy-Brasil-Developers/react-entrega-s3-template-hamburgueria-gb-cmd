@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { CartModal } from "../../components/CartModal";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
-import { api } from "../../services/api.js"
+import { api } from "../../services/api.js";
 import { toast } from "react-toastify";
 
 export const HomePage = () => {
-   const storedCartList = localStorage.getItem("@CARTLIST")
+   const storedCartList = localStorage.getItem("@CARTLIST");
 
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState(storedCartList ? JSON.parse(storedCartList) : [] );
@@ -14,41 +14,39 @@ export const HomePage = () => {
 
    useEffect(() => {
       const createProductList = async () => {
-         const { data } = await api.get("/products")
+         const { data } = await api.get("/products");
 
          setProductList(data);
       }
       createProductList();
    }, []);
 
-  const addToCart = (product) => {
+   const addToCart = (product) => {
 
       if(!cartList.some(cartListProduct => cartListProduct.id === product.id)) {
-         setCartList([...cartList, product]) 
+         setCartList([...cartList, product]);
 
       } else {
-         //trocar por um toast
-         // alert("Produto já adicionado ao carrinho.")
-         toast.error("Produto já adicionado ao carrinho.")
+         toast.error("Produto já adicionado ao carrinho.");
       }
-   }
+   };
 
    const removeToCard = (product) => {
       const filteredList = cartList.filter(cartProduct => {
          if(cartProduct.id !== product.id) {
-            return cartProduct
+            return cartProduct;
          }
-      })
+      });
 
-      setCartList(filteredList)
-   }
+      setCartList(filteredList);
+   };
    
    useEffect(() => {
       if(cartList) {
-         localStorage.setItem("@CARTLIST", JSON.stringify(cartList))
+         localStorage.setItem("@CARTLIST", JSON.stringify(cartList));
       }
 
-   },[cartList])
+   },[cartList]);
 
    return (
       <>

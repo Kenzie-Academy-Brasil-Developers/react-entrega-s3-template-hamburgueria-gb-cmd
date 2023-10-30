@@ -14,7 +14,7 @@
     &:focus {
        border: 2px solid var(--color-primary);
 
-       button {
+        button {
             border: 2px solid var(--color-primary);
             background-color: var(--color-primary);   
         }
@@ -62,7 +62,9 @@
 
         &:hover {
             border: 2px solid var(--color-primary);
-            background-color: var(--color-primary);    
+            background-color: var(--color-primary);  
+
+            cursor: pointer;  
         }
     }
 }
