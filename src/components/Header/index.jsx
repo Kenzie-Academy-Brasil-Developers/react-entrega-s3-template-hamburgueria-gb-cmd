@@ -7,13 +7,17 @@ export const Header = ({ setIsOpen, cartList }) => {
 
    return (
       <header className={styles.headerContainer}>
-         <img src={Logo} alt="Logo Kenzie Burguer" />
-         <div>
-            <button onClick={() => setIsOpen(true)}>
-               <MdShoppingCart className={styles.cartIcon} size={21} />
-               <span>{cartList.length}</span>
-            </button>
+
+         <div className={styles.headerContent}>
+            <img src={Logo} alt="Logo Kenzie Burguer" />
+            <div className={styles.cartContent}>
+               <button onClick={() => setIsOpen(true)}>
+                  <MdShoppingCart className={styles.cartIcon} size={21} />
+                  <span>{cartList.length}</span>
+               </button>
+            </div>
          </div>
+         
       </header>
    );
 };
